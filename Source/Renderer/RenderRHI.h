@@ -1,6 +1,7 @@
 #pragma once 
 
 #include <stdio.h>
+#include "GLFW/glfw3.h"
 
 namespace LE 
 {
@@ -8,6 +9,7 @@ namespace LE
     {
         public: 
             virtual ~RenderRHI() = default;
-            virtual void Init() {};
+            virtual void Init() {}
+            virtual void Init(GLFWwindow* pWindow) {}
     };
 }

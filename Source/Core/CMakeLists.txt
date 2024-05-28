@@ -5,4 +5,5 @@ add_library(Core
 )
 
 target_link_libraries(Core glfw)
+target_include_directories(Core PUBLIC ${CMAKE_SOURCE_DIR}/Source)
 # target_include_directories(Core PUBLIC ${ROOT_PATH})

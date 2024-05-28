@@ -8,6 +8,9 @@ namespace LE
     {
         m_Window = new Window();
         m_Renderer = new Renderer();
+
+        // Engine Component Initalization 
+        Init();
     }
 
     Application::~Application()
@@ -16,10 +19,13 @@ namespace LE
         delete m_Renderer;
     }
 
+    void Application::Init()
+    {
+        m_Renderer->Init(m_Window->GetWindowHandle());
+    }
+
     void Application::Run()
     {
-        m_Renderer->Init();
-
         while (!m_Window->IsWindowShouldClose()) 
         {
             m_Window->Display();

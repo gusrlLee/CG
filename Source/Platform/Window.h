@@ -17,7 +17,7 @@ namespace LE
 
             bool IsWindowShouldClose();
             void Display();
-            void GetWindowHandle();
+            GLFWwindow* GetWindowHandle();
 
         private:
             GLFWwindow* m_Window;

@@ -1,12 +1,12 @@
 #include "Renderer.h"
 
-#include "RenderRHI/Metal/Metal_Renderer.h"
+#include "RenderRHI/GraphicsContextBridge.h"
 
 namespace LE 
 {
     Renderer::Renderer()
     {
-        m_pRHI = new Metal_Renderer();
+        m_pRHI = CreateRenderRHI_Metal();
     }
 
     Renderer::~Renderer()
@@ -17,5 +17,10 @@ namespace LE
     void Renderer::Init()
     {
         m_pRHI->Init();
+    }
+    
+    void Renderer::Init(GLFWwindow* pWindow)
+    {
+        m_pRHI->Init(pWindow);
     }
 }

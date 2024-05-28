@@ -7,5 +7,5 @@ add_library(Renderer
 )
 
 target_link_libraries(Renderer Metal_Renderer)
-
+target_include_directories(Renderer PUBLIC ${CMAKE_SOURCE_DIR}/Source)
 # target_include_directories(Renderer PUBLIC ${ROOT_PATH})

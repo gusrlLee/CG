@@ -26,6 +26,11 @@ namespace LE
         return glfwWindowShouldClose(m_Window);
     } 
 
+    GLFWwindow* Window::GetWindowHandle()
+    {
+        return m_Window;
+    }
+
     void Window::Display()
     {
         glfwPollEvents();

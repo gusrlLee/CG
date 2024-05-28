@@ -8,4 +8,4 @@ add_library(Platform
 
 target_link_libraries(Platform glfw)
 
-target_include_directories(Platform PUBLIC ${ROOT_PATh})
+target_include_directories(Platform PUBLIC ${CMAKE_SOURCE_DIR}/Source)

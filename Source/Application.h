@@ -14,6 +14,8 @@ namespace LE
             void Run();
 
         private:
+            void Init();
+
             Window* m_Window;
             Renderer* m_Renderer;
     };
