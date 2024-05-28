@@ -1,6 +1,8 @@
 #pragma once 
 
 #include "GLFW/glfw3.h"
+#include "GraphicsContext.h"
+#include "Device.h"
 
 #include "RenderRHI.h"
 
@@ -16,6 +18,9 @@ namespace LE
            void Init(GLFWwindow* pWindow);
 
         private:
-            RenderRHI *m_pRHI;
+            // RenderRHI *m_pRHI;
+
+            GraphicsContext* m_GraphicsContext;
+            Device* m_Device;
     };
 }

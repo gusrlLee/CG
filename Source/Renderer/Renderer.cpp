@@ -6,21 +6,24 @@ namespace LE
 {
     Renderer::Renderer()
     {
-        m_pRHI = CreateRenderRHI_Metal();
+        // m_pRHI = CreateRenderRHI_Metal();
+        m_GraphicsContext = CreateMetalGraphicsContext();
     }
 
     Renderer::~Renderer()
     {
-        delete m_pRHI;
+        // delete m_pRHI;
+        delete m_Device;
     }
 
     void Renderer::Init()
     {
-        m_pRHI->Init();
+        // m_pRHI->Init();
     }
     
     void Renderer::Init(GLFWwindow* pWindow)
     {
-        m_pRHI->Init(pWindow);
+        // m_pRHI->Init(pWindow);
+        m_Device = m_GraphicsContext->CreateDevice();
     }
 }
