@@ -4,6 +4,7 @@ namespace LE
 {
     class CommandQueue
     {
-
+        public:
+            virtual ~CommandQueue();
     };
 }

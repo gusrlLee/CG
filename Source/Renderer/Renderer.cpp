@@ -7,6 +7,7 @@ namespace LE
     Renderer::Renderer()
     {
         // m_pRHI = CreateRenderRHI_Metal();
+        // if we use Metal API 
         m_GraphicsContext = CreateMetalGraphicsContext();
     }
 

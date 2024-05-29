@@ -17,6 +17,8 @@ namespace LE
            void Init();
            void Init(GLFWwindow* pWindow);
 
+           void Draw();
+
         private:
             // RenderRHI *m_pRHI;
 
