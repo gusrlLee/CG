@@ -14,6 +14,7 @@ namespace LE
     Renderer::~Renderer()
     {
         // delete m_pRHI;
+        delete m_CommandQueue;
         delete m_Device;
     }
 
@@ -26,5 +27,6 @@ namespace LE
     {
         // m_pRHI->Init(pWindow);
         m_Device = m_GraphicsContext->CreateDevice();
+        m_CommandQueue = m_Device->CreateCommandQueue();
     }
 }

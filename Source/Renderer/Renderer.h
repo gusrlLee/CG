@@ -1,8 +1,11 @@
 #pragma once 
 
 #include "GLFW/glfw3.h"
+#include "RenderSystem.h"
+
 #include "GraphicsContext.h"
 #include "Device.h"
+#include "CommandQueue.h"
 
 #include "RenderRHI.h"
 
@@ -24,5 +27,6 @@ namespace LE
 
             GraphicsContext* m_GraphicsContext;
             Device* m_Device;
+            CommandQueue* m_CommandQueue;
     };
 }

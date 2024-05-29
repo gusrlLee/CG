@@ -1,4 +1,5 @@
 #pragma once 
+#include "CommandQueue.h"
 
 namespace LE 
 {
@@ -6,6 +7,6 @@ namespace LE
     {
         public:
             virtual ~Device() = default;
-            virtual CreateCommandQueue();
+            virtual CommandQueue* CreateCommandQueue() {}
     };
 }

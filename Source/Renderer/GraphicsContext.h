@@ -6,7 +6,7 @@ namespace LE
     class GraphicsContext 
     {
         public:
-            virtual ~GraphicsContext() {}
+            virtual ~GraphicsContext() = default;
             virtual Device* CreateDevice() {}
     };
 }
