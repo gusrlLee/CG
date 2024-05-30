@@ -6,6 +6,6 @@ add_library(Renderer
     Renderer.cpp
 )
 
-target_link_libraries(Renderer Metal_Renderer)
+target_link_libraries(Renderer Metal_Renderer utils)
 target_include_directories(Renderer PUBLIC ${CMAKE_SOURCE_DIR}/Source)
 # target_include_directories(Renderer PUBLIC ${ROOT_PATH})

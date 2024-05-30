@@ -6,6 +6,7 @@
 #include "GraphicsContext.h"
 #include "Device.h"
 #include "CommandQueue.h"
+#include "RenderPipeline.h"
 
 #include "RenderRHI.h"
 
@@ -28,5 +29,6 @@ namespace LE
             GraphicsContext* m_GraphicsContext;
             Device* m_Device;
             CommandQueue* m_CommandQueue;
+            RenderPipeline* m_RenderPipeline;
     };
 }

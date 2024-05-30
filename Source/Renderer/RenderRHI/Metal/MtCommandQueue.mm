@@ -9,6 +9,6 @@ namespace LE
 
     MtCommandQueue::~MtCommandQueue()
     {
-
+        m_CommandQueue->release();
     }
 }

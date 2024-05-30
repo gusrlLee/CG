@@ -2,5 +2,10 @@
 
 namespace LE 
 {
-
+    class Camrea 
+    {
+        public:
+            Camera() {}
+            ~Camera() {}
+    };
 }

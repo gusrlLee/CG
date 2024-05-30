@@ -7,6 +7,7 @@ set(ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_subdirectory(ThirdParty)
 # add_subdirectory(Core)
+add_subdirectory(Utils)
 add_subdirectory(Renderer)
 add_subdirectory(Platform)
 
