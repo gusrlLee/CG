@@ -18,6 +18,7 @@ namespace LE
         delete m_CommandQueue;
         delete m_Device;
         delete m_RenderPipeline;
+        delete m_Buffer;
     }
 
     void Renderer::Init()
@@ -36,5 +37,19 @@ namespace LE
             "vertexShader",
             "fragmentShader"
         );
+
+        m_Buffer = m_Device->CreateBuffer();
+    }
+
+    void Renderer::Draw()
+    {
+        // TODO:
+        // 1. RenderPipeline 을 만드는 것 끝남.
+        // 2. Device->CreateNewBuffer() implementation 
+        // 3. save triangle vertex information --> Done! 
+        // 4. So, RenderSystem is drawed by Renderer in this function. 
+        // Make RenderSystem 
+        // Renderer Initialization 
+        // Draw Scene data 
     }
 }

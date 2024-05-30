@@ -7,6 +7,7 @@
 #include "Device.h"
 #include "CommandQueue.h"
 #include "RenderPipeline.h"
+#include "Buffer.h"
 
 #include "RenderRHI.h"
 
@@ -30,5 +31,6 @@ namespace LE
             Device* m_Device;
             CommandQueue* m_CommandQueue;
             RenderPipeline* m_RenderPipeline;
+            Buffer* m_Buffer;
     };
 }

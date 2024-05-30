@@ -7,6 +7,7 @@ add_library(Metal_Renderer
     MtDevice.mm
     MtCommandQueue.mm
     MtRenderPipeline.mm
+    MtBuffer.mm
 )
 
 target_link_libraries(Metal_Renderer METAL_CPP glfw)

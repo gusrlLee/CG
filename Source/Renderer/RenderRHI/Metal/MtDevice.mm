@@ -46,4 +46,19 @@ namespace LE
 
         return pRenderPipeline;
     }
+
+    Buffer* MtDevice::CreateBuffer()
+    {
+        simd::float3 triangleVertices[] = {
+            {-0.5f, -0.5f, 0.0f},
+            { 0.5f, -0.5f, 0.0f},
+            { 0.0f,  0.5f, 0.0f}
+        };
+    
+        MTL::Buffer* triangleBuffer = m_Device->newBuffer(&triangleVertices, sizeof(triangleVertices), MTL::ResourceStorageModeShared);
+        Buffer* pBuffer = new MtBuffer(triangleBuffer);
+        triangleBuffer->release();
+        return pBuffer;
+    }
+
 }
