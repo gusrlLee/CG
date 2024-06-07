@@ -18,6 +18,9 @@ void BVHTracer::Init()
     m_Scene = new Scene();
     m_Scene->Init();
 
+    m_Mesh = new Mesh();
+    m_Mesh->CreateRandomTriangles();
+
 }
 
 void BVHTracer::Run()
@@ -39,6 +42,8 @@ void BVHTracer::Run()
 void BVHTracer::Release()
 {
     m_Scene->Release();
+    m_Mesh->Release();
 
     delete m_Window;
+    delete m_Mesh;
 }

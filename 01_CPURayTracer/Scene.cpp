@@ -49,7 +49,12 @@ void Scene::Init()
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-    unsigned char *data = stbi_load("../Asset/Textures/container.jpg", &width, &height, &nrChannels, 0);
+    // unsigned char *data = stbi_load("../Asset/Textures/container.jpg", &width, &height, &nrChannels, 0);
+    width = 1280;
+    height = 720;
+    nrChannels = 3;
+    
+    unsigned char *data = new unsigned char[width * height * nrChannels];
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -60,6 +65,7 @@ void Scene::Init()
         std::cout << "Failed to load texture" << std::endl;
     }
     stbi_image_free(data);
+    // delete[] data;
 
     m_Shader->use();
     glUniform1i(glGetUniformLocation(m_Shader->ID, "texture"), 0);

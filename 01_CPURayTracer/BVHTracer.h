@@ -4,6 +4,7 @@
 
 #include "Lee/Core.h"
 #include "Scene.h"
+#include "Mesh.h"
 
 class BVHTracer : public Lee::Application 
 {
@@ -15,4 +16,5 @@ class BVHTracer : public Lee::Application
     private:
         Lee::Window* m_Window;
         Scene* m_Scene;
+        Mesh* m_Mesh;
 };
