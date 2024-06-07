@@ -9,4 +9,9 @@ add_executable(${SAMPLE_PROJECT_NAME}
 )
 
 target_include_directories(${SAMPLE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
+target_include_directories(${SAMPLE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/ThirdParty/glad/include)
+target_include_directories(${SAMPLE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/ThirdParty)
+
 target_link_libraries(${SAMPLE_PROJECT_NAME} Lee)
+target_link_libraries(${SAMPLE_PROJECT_NAME} GLAD_LIB)
+target_link_libraries(${SAMPLE_PROJECT_NAME} glm::glm-header-only)

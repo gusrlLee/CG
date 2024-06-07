@@ -11,10 +11,14 @@ namespace Lee
             Window();
             ~Window();
             bool IsWindowShouldClose();
+            GLFWwindow* GetNativeWindowPtr();
+            int GetWindowWidth() { return m_Width; }
+            int GetWindowHeight() { return m_Height; }
 
             void Update();
 
         private:
+            int m_Width, m_Height;
             GLFWwindow* m_Window;
     };
 }

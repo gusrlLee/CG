@@ -4,6 +4,9 @@ namespace Lee
 {
     Window::Window()
     {
+        m_Width = WINDOW_WIDTH;
+        m_Height = WINDOW_HEIGHT;
+
         m_Window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE, NULL, NULL);
         if (!m_Window)
         {
@@ -25,5 +28,11 @@ namespace Lee
     void Window::Update()
     {
         glfwPollEvents();
+    }
+
+
+    GLFWwindow* Window::GetNativeWindowPtr()
+    {
+        return m_Window;
     }
 }

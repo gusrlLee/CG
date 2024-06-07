@@ -16,6 +16,5 @@ namespace Lee
             virtual void Release();
 
         private:
-            // Window* m_Window;
     };
 }
