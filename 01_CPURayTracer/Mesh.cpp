@@ -12,7 +12,7 @@ void Mesh::Set(const char* filePath)
 
 void Mesh::CreateRandomTriangles() 
 {
-    m_PrimitivesCount = 12582;
+    m_PrimitivesCount = 5000;
     m_Primitives = new Triangle[m_PrimitivesCount];
 
     for(int i=0; i<m_PrimitivesCount; i++)

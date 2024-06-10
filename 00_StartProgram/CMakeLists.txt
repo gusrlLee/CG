@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-set(SAMPLE_PROJECT_NAME 00_StarterPack)
+set(SAMPLE_PROJECT_NAME 00_StartProgram)
 
 file(GLOB SAMPLE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 

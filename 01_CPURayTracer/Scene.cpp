@@ -68,7 +68,7 @@ void Scene::Init()
     // delete[] data;
 
     m_Shader->use();
-    glUniform1i(glGetUniformLocation(m_Shader->ID, "texture"), 0);
+    glUniform1i(glGetUniformLocation(m_Shader->ID, "textkure"), 0);
 }
 
 

@@ -6,5 +6,6 @@ add_subdirectory(ThirdParty)
 
 add_subdirectory(Lee)
 
-add_subdirectory(00_StarterPack)
-add_subdirectory(01_CPURayTracer)
+# add_subdirectory(01_CPURayTracer)
+add_subdirectory(00_StartProgram)
+# add_subdirectory(01_PathTracing)

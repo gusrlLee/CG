@@ -13,7 +13,6 @@ void BVHTracer::Init()
         std::runtime_error("Failed to initialize GLAD\n");
         return;
     }    
-    glViewport(0, 0, m_Window->GetWindowWidth(), m_Window->GetWindowHeight());
 
     m_Scene = new Scene();
     m_Scene->Init();
@@ -21,6 +20,8 @@ void BVHTracer::Init()
     m_Mesh = new Mesh();
     m_Mesh->CreateRandomTriangles();
 
+    m_BVH = new BVH();
+    m_BVH->Init(m_Mesh);
 }
 
 void BVHTracer::Run()
@@ -42,6 +43,7 @@ void BVHTracer::Run()
 void BVHTracer::Release()
 {
     m_Scene->Release();
+    m_BVH->Release();
     m_Mesh->Release();
 
     delete m_Window;
