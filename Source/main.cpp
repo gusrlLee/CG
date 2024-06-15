@@ -1,7 +1,14 @@
 #include <iostream>
+#include "Application.h"
 
 int main()
 {
-    std::cout << "Hello world! " << std::endl;
+    Lee::Application* app = new Lee::Application();
+
+    app->Init();
+    app->Run();
+    app->Release();
+
+    delete app;
     return 0;
 }
