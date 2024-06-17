@@ -3,11 +3,12 @@ cmake_minimum_required(VERSION 3.15)
 add_executable(${PROJECT_NAME} 
     main.cpp
 
-    Graphics/Metal/MtDevice.cpp
+    Graphics/Metal/glfwAdapter.mm
 
-    Renderer/Device.cpp
-    Renderer/RendererAPI.cpp
-    # Renderer/SwapChain.cpp
+    Graphics/Metal/MtRHI.cpp
+
+    Renderer/Renderer.cpp
+    Renderer/RHI.cpp
 
     Application.cpp
     Window.cpp

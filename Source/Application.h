@@ -1,6 +1,7 @@
 #pragma once 
 
 #include "Window.h"
+#include "Renderer/Renderer.h"
 #include <iostream>
 
 namespace Lee
@@ -17,5 +18,6 @@ namespace Lee
 
         private:
             Window* m_Window;
+            Renderer* m_Renderer;
     };
 }

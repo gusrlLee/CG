@@ -1,7 +1,5 @@
 #include "Application.h"
 
-#include "Renderer/Device.h"
-
 namespace Lee 
 {
     Application::Application()
@@ -19,20 +17,32 @@ namespace Lee
     {
         WindowData windowData = {"Lee Engine", 1080, 720};
         m_Window = new Window(windowData);
-
-        Device* device = Device::Create();
+        m_Renderer = new Renderer();
+        m_Renderer->Init(m_Window);
     }
 
     void Application::Run()
     {
         while (!m_Window->IsShouldClose())
         {
+            m_Renderer->Draw();
             m_Window->Update();
+
+            
+            // m_Window->Update()
+            // m_Renderer->CommandPool()
+            // m_Renderer->CreateCommandBuffer()
+            // m_Renderer->BeginFrame()
+            // m_BasicRenderSystem()->EncodingTo(commmandBuffer);
+            // m_Renderer->EndFrame()
+            // m_Renderer->swapchain();
         }
     }
 
     void Application::Release()
     {
+        m_Renderer->Release();
         delete m_Window;
+        delete m_Renderer;
     }
 }
