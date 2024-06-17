@@ -4,7 +4,6 @@
 #include <GLFW/glfw3.h>
 #define GLFW_EXPOSE_NATIVE_COCOA
 #include <GLFW/glfw3native.h>
-#include "MtCommon.h"
 
 #include <Foundation/Foundation.hpp>
 #include <Metal/Metal.hpp>
@@ -12,3 +11,13 @@
 #include <QuartzCore/QuartzCore.hpp>
 #include <AppKit/AppKit.hpp>
 
+#include "Display.h"
+
+
+namespace LE
+{
+    extern MTL::Device* g_Device;
+    
+    void Init();
+    void Shutdown();
+}

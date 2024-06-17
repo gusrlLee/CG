@@ -1,48 +1,33 @@
 #include "Application.h"
 
-namespace Lee 
+Application::Application()
 {
-    Application::Application()
-    {
-        glfwInit();
-        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    }
+    LE::Init();
+}
 
-    Application::~Application()
-    {
-        glfwTerminate();
-    }
+Application::~Application()
+{
+}
 
-    void Application::Init()
-    {
-        WindowData windowData = {"Lee Engine", 1080, 720};
-        m_Window = new Window(windowData);
-        m_Renderer = new Renderer();
-        m_Renderer->Init(m_Window);
-    }
+void Application::Init()
+{
 
-    void Application::Run()
-    {
-        while (!m_Window->IsShouldClose())
-        {
-            m_Renderer->Draw();
-            m_Window->Update();
+}
 
-            
-            // m_Window->Update()
-            // m_Renderer->CommandPool()
-            // m_Renderer->CreateCommandBuffer()
-            // m_Renderer->BeginFrame()
-            // m_BasicRenderSystem()->EncodingTo(commmandBuffer);
-            // m_Renderer->EndFrame()
-            // m_Renderer->swapchain();
-        }
-    }
-
-    void Application::Release()
+void Application::Run()
+{
+    while (!LE::Display::IsShouldClose())
     {
-        m_Renderer->Release();
-        delete m_Window;
-        delete m_Renderer;
+        LE::Display::Update();
+
+        LE::Renderer::BeginFrame();
+        LE::Display::SwapBuffers(); // TODO: Change This function! 
+
+        LE::Renderer::EndFrame();
     }
+}
+
+void Application::Release()
+{
+    LE::Shutdown();
 }

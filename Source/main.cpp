@@ -3,7 +3,7 @@
 
 int main()
 {
-    Lee::Application* app = new Lee::Application();
+    Application* app = new Application();
 
     app->Init();
     app->Run();

@@ -1,8 +1,8 @@
 #pragma once 
 
-namespace LE 
+namespace LE
 {
-    class Sphere 
+    class Camera 
     {
 
     };

@@ -1,17 +1,16 @@
 cmake_minimum_required(VERSION 3.15)
 
 add_executable(${PROJECT_NAME} 
-    main.cpp
 
-    Graphics/Metal/glfwAdapter.mm
-
-    Graphics/Metal/MtRHI.cpp
-
-    Renderer/Renderer.cpp
-    Renderer/RHI.cpp
+    LE/glfwAdapter.mm
+    LE/Core.cpp
+    LE/Display.cpp
+    LE/Renderer.cpp
+    LE/Scene.cpp
+    
 
     Application.cpp
-    Window.cpp
+    main.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Source)

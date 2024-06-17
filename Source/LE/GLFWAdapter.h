@@ -1,5 +1,4 @@
 #pragma once 
+#include "Core.h"
 
-
-#include "MtCommon.h"
 NS::Window* GetNSWindow(GLFWwindow* glfwWindow, CA::MetalLayer* layer);
