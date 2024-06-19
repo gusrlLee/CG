@@ -47,6 +47,11 @@ namespace LE
             g_SwapChain = g_Layer->nextDrawable();
         }
 
+        CA::MetalDrawable* GetSwapChain()
+        {
+            return g_Layer->nextDrawable(); 
+        }
+
         void Shutdown()
         {
             glfwDestroyWindow(g_Display);
@@ -58,7 +63,7 @@ namespace LE
             return g_DisplayWidth;
         }
 
-        int GetDisplayHidth()
+        int GetDisplayHeight()
         {
             return g_DisplayHeight;
         }

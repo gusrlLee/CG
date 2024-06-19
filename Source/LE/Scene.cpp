@@ -2,29 +2,28 @@
 
 namespace LE
 {
-    Scene::Scene()
-    {
-        m_Width = Display::GetDisplayWidth();
-        m_Height = Display::GetDisplayHeight();
+    Scene::Scene(const char* filepath) {
+        stbi_set_flip_vertically_on_load(true);
+        unsigned char* image = stbi_load(filepath, &width, &height, &channels, STBI_rgb_alpha);
+        assert(image != NULL);
         
         MTL::TextureDescriptor* textureDescriptor = MTL::TextureDescriptor::alloc()->init();
         textureDescriptor->setPixelFormat(MTL::PixelFormatRGBA8Unorm);
-        textureDescriptor->setWidth(m_Width);
-        textureDescriptor->setHeight(m_Height);
-        m_Scene = g_Device->newTexture(textureDescriptor);
+        textureDescriptor->setWidth(width);
+        textureDescriptor->setHeight(height);
 
-        MTL::Region region = MTL::Region(0, 0, 0, m_Width, m_Height, 1);
-        NS::UInteger bytesPerRow = 4 * m_Width;
-
-        m_Scene->replaceRegion(region, 0, 255, bytesPerRow);
-
+        texture = g_Device->newTexture(textureDescriptor);
+        
+        MTL::Region region = MTL::Region(0, 0, 0, width, height, 1);
+        NS::UInteger bytesPerRow = 4 * width;
+        
+        texture->replaceRegion(region, 0, image, bytesPerRow);
+            
         textureDescriptor->release();
+        stbi_image_free(image);
     }
 
-    void Scene::Update(unsigned char* pData)
-    {
-        MTL::Region region = MTL::Region(0, 0, 0, m_Width, m_Height, 1);
-        NS::UInteger bytesPerRow = 4 * m_Width; 
-        m_Scene->replaceRegion(region, 0, 255, bytesPerRow); 
+    Scene::~Scene() {
+        texture->release();
     }
 }

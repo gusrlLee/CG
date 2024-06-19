@@ -27,5 +27,6 @@ namespace LE
         int GetDisplayHeight();
 
         void SwapBuffers();
+        CA::MetalDrawable* GetSwapChain();
     }
 }

@@ -5,15 +5,17 @@ add_executable(${PROJECT_NAME}
     LE/glfwAdapter.mm
     LE/Core.cpp
     LE/Display.cpp
-    LE/Renderer.cpp
     LE/Scene.cpp
-    
+    LE/Renderer.cpp
+    LE/Shader.cpp
 
+    LE/stb_image.cpp
     Application.cpp
     main.cpp
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Source)
+# target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Source)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/ThirdParty)
 
 target_link_libraries(${PROJECT_NAME} glfw)
 target_link_libraries(${PROJECT_NAME} assimp)

@@ -16,7 +16,7 @@ struct VertexOut {
     float2 textureCoordinate;
 };
 
-vertex VertexOut vertexShader(uint vertexID [[vertex_id]],
+vertex VertexOut vertexMain(uint vertexID [[vertex_id]],
              constant VertexData* vertexData) {
     VertexOut out;
     out.position = vertexData[vertexID].position;
@@ -24,7 +24,7 @@ vertex VertexOut vertexShader(uint vertexID [[vertex_id]],
     return out;
 }
 
-fragment float4 fragmentShader(VertexOut in [[stage_in]],
+fragment float4 fragmentMain(VertexOut in [[stage_in]],
                                texture2d<float> colorTexture [[texture(0)]]) {
     constexpr sampler textureSampler (mag_filter::linear,
                                       min_filter::linear);

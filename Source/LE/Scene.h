@@ -1,19 +1,15 @@
-#pragma once 
+#pragma once
 #include "Core.h"
-#include "Display.h"
+#include "stb_image.h"
 
 namespace LE
 {
     class Scene
     {
         public:
-            Scene();
+            Scene(const char* filepath);
             ~Scene();
-            
-            void Update(unsigned char* pData);
-
-        private:
-            int m_Width, m_Height;
-            MTL::Texture* m_Scene;
+            MTL::Texture* texture;
+            int width, height, channels;
     };
 }

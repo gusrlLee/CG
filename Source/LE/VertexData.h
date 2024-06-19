@@ -3,7 +3,10 @@
 
 using namespace simd;
 
-struct VertexData {
-    float4 position;
-    float2 textureCoordinate;
-};
+namespace LE
+{
+    struct VertexData {
+        float4 position;
+        float2 textureCoordinate;
+    };
+}
